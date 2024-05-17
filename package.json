@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack --env dev",
     "build:prod": "webpack --env prod",
-    "dev": "pear dev",
+    "dev": "pear dev -- -s ../pear-storage/category-product-p2p",
     "lint": "eslint --ext .js,.ts,.tsx ./src",
     "test": "brittle test/*.test.js"
   },
