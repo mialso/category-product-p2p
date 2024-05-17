@@ -2,7 +2,7 @@ import path from 'path';
 
 export default (env) => ({
   target: 'es2020',
-  entry: './src/index.ts',
+  entry: './src/index.tsx',
   mode: env.prod ? 'production' : 'development',
   output: {
     path: path.resolve('./', 'build'),
