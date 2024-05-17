@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "jsx": "react",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "strict": false,
+    "preserveConstEnums": true,
+    "target": "es2020"
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
