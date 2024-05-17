@@ -6,7 +6,7 @@
     "build": "webpack --env dev",
     "build:prod": "webpack --env prod",
     "dev": "pear dev",
-    "lint": "npx eslint src/",
+    "lint": "eslint --ext .js,.ts,.tsx ./src",
     "test": "brittle test/*.test.js"
   },
   "pear": {
@@ -23,6 +23,12 @@
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "brittle": "^3.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "ts-loader": "^9.5.1",
     "typescript": "^5.4.5",
     "webpack": "^5.91.0",
