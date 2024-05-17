@@ -13,6 +13,6 @@ function App() {
     );
 }
 
-// @ts-ignore
+// @ts-expect-error doesn't matter for now
 const root = createRoot(document.getElementById('app-root'));
 root.render(<App />);

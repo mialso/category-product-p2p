@@ -6,6 +6,7 @@
     "esModuleInterop": true,
     "strict": false,
     "preserveConstEnums": true,
+    "strictNullChecks": true,
     "target": "es2020"
   },
   "include": [
