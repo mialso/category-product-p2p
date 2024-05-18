@@ -7,6 +7,7 @@
     "build:prod": "webpack --env prod",
     "dev": "pear dev -- -s ../pear-storage/category-product-p2p",
     "lint": "eslint --ext .js,.ts,.tsx ./src",
+    "lint:fix": "eslint --fix --ext .js,.ts,.tsx ./src",
     "test": "brittle test/*.test.js"
   },
   "pear": {
@@ -38,8 +39,10 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-redux": "^9.1.2"
+    "react-redux": "^9.1.2",
+    "redux": "^5.0.1"
   }
 }

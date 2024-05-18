@@ -1,0 +1,40 @@
+.CategoryInput {
+    display: flex;
+    min-width: 450px;
+    flex-direction: column;
+}
+
+.CategoryInput-Action {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.CategoryInput-Action > button {
+    margin: 4px;
+}
+
+.CategoryItem {
+    padding: 2px 6px;
+    border-radius: 4px;
+    background-color: lightgray;
+}
+
+.CategoryItemsList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.CategoryItemsList > .CategoryItem {
+    margin: 4px;
+}
+
+.CategoryItem-Action--close {
+    width: 20px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

@@ -1,0 +1,31 @@
+.ProductList {
+    flex: 1;
+    max-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.ProductList-Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+.ProductList-Items {
+    overflow-y: scroll;
+}
+
+.ProductList-Button {
+    color: white;
+    background-color: green;
+}
+
+.ProductList-Button > span {
+    margin-right: 4px;
+}
+
+.ProductEditor > .AppButton {
+    float: right;
+}
