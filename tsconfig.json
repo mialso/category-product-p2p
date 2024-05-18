@@ -10,6 +10,10 @@
     "target": "es2020"
   },
   "include": [
-    "./src/**/*"
+    "./src/**/*",
+    "./types/global.d.ts",
+    "./types/hyperswarm/index.d.ts",
+    "./types/corestore/index.d.ts",
+    "./types/hypercore/index.d.ts"
   ]
 }
