@@ -1,9 +1,9 @@
 import { SUCCESS } from '../base/remote/api';
 import { ASKED } from '../base/remote/constants';
 import { closeModal } from '../base/modal';
-import { MODE_EDIT, MODE_CREATE } from 'app/form/constants';
+import { MODE_EDIT, MODE_CREATE } from '../base/form/constants';
 import { withToken } from '../base/stub';
-import { READ_CATEGORIES_API } from 'category/action';
+import { READ_CATEGORIES_API } from '../category/action';
 import {
     READ_PRODUCTS, READ_PRODUCTS_API, DELETE_PRODUCT,
     CREATE_PRODUCT_API, UPDATE_PRODUCT_API, SUBMIT_PRODUCT,

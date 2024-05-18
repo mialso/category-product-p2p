@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NOT_ASKED, READY } from '../../model/remote/constants';
+import { NOT_ASKED, READY } from '../../../model/base/remote/constants';
 import { productState } from '../../../model/product/selector';
 import { readProducts } from '../../../model/product/action';
 

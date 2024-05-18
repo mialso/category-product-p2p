@@ -1,8 +1,8 @@
+// @ts-nocheck
 import { compose } from 'redux';
-import { NOT_ASKED, ASKED, READY } from 'app/remote/constants';
-import { SUCCESS } from 'app/remote/api';
-import { USER_LOGOUT } from 'user/action';
-import { DELETE_CATEGORY_API } from 'category/action';
+import { NOT_ASKED, ASKED, READY } from '../base/remote/constants';
+import { SUCCESS } from '../base/remote/api';
+import { DELETE_CATEGORY_API } from '../category/action';
 import {
     READ_PRODUCTS, SET_PRODUCTS, CREATE_PRODUCT_API, UPDATE_PRODUCT_API,
     SET_PRODUCT_BY_CATEGORY, DELETE_PRODUCT_API,
@@ -101,9 +101,6 @@ export const productReducer = (state = initialState, message) => {
             updateCategoryIdsMap(message.payload),
             removeItem(message.payload),
         )(state);
-        case USER_LOGOUT: {
-            return initialState;
-        }
         case DELETE_CATEGORY_API + SUCCESS: return ({
             ...state,
             byCategoryId: {

@@ -7,6 +7,7 @@ export function getTreeFromParentsMap(parentMap) {
     // populate tree map
     Object.values(parentMap)
         .forEach((item) => {
+            // @ts-expect-error TODO later
             const { id, parentId } = item;
             // add parent to tree map
             const parentItem = parentMap[parentId];

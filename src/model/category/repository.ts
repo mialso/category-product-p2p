@@ -1,6 +1,6 @@
 import { SUCCESS } from '../base/remote/api';
 import { ASKED } from '../base/remote/constants';
-import { openModal, closeModal } from 'app/modal';
+import { openModal, closeModal } from '../base/modal';
 import { withToken } from '../base/stub';
 import { READ_PRODUCTS_API } from '../product/action';
 import {

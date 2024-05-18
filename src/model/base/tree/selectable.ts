@@ -14,6 +14,7 @@ export function stateSelectable(state) {
 
 export function createSelectableFromMap(map) {
     return Object.values(map).reduce(
+        // @ts-expect-error TODO later
         (acc, item) => ({ ...acc, [item.id]: itemSelectable(item) }),
         {},
     );

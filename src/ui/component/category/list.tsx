@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import classnames from 'classnames';
-import { EMPTY, PARTIAL, FULL } from '../../model/tree/selectable';
+import { EMPTY, PARTIAL, FULL } from '../../../model/base/tree/selectable';
 import { NOT_ASKED, READY } from '../../../model/base/remote/constants';
 import {
     readCategories, createCategory, updateCategory, toggleSelectCategory,
@@ -28,7 +28,7 @@ const List = ({ itemIds, level }) => (
     <div className="CategoryList" style={{ paddingLeft: 20 * level }}>
         { itemIds.map(
             (id) => (
-                <Category key={id} id={id} level={level} />
+                <Category key={id} id={id} level={level} isSelectOnly={false}/>
             ),
         )}
     </div>
@@ -92,7 +92,7 @@ export const Category = ({ id, level, isSelectOnly }) => {
 export const CategorySelector = () => {
     const categories = useSelector(categoryRootNodeIds, shallowEqual);
     const dispatch = useDispatch();
-    const handleCreateClick = useCallback(() => dispatch(createCategory({ parentId: null })));
+    const handleCreateClick = useCallback(() => dispatch(createCategory({ parentId: null })), [dispatch]);
     return (
         <div className="CategorySelector">
             <div className="CategorySelector-Header">

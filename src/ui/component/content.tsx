@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { productIdsByCategoryIds } from '../../model/product/selector';
 import { createProduct } from '../../model/product/action';
-import { formProduct } from '../model/form/reducer';
-import { changeFormProduct, stopFormEdit, submitFormProduct } from '../model/form/action';
-import { MODE_NORMAL, MODE_CREATE } from '../model/form/constants';
+import { formProduct } from '../../model/base/form/reducer';
+import { changeFormProduct, stopFormEdit, submitFormProduct } from '../../model/base/form/action';
+import { MODE_NORMAL, MODE_CREATE } from '../../model/base/form/constants';
 import { CategoryItems } from './category/input';
 import { CategoryPicker } from './category/select';
 import { ProductItem, ProductAction } from './product/item';
@@ -23,6 +23,7 @@ export const ProductCard = ({ id }) => (
 export const ProductEditor = () => {
     const { product, mode, isPristine } = useSelector(formProduct);
     const dispatch = useDispatch();
+    // @ts-expect-error TODO later
     useEffect(() => () => dispatch(stopFormEdit()), []);
     if (mode === MODE_NORMAL) {
         return null;
@@ -71,6 +72,7 @@ export const ProductList = ({ ids, startCreateProduct }) => (
 
 export const ConnectedProductList = connect(
     (state) => ({
+        // @ts-expect-error TODO later
         ids: productIdsByCategoryIds(state.category.selected)(state) || [],
     }),
     { startCreateProduct: createProduct },

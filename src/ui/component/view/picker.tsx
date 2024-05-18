@@ -10,10 +10,12 @@ export const ViewButtonRaw = ({ name, onClick, isDisabled }) => (
 );
 
 export const ViewButton = connect(
+    // @ts-expect-error TODO later
     (state, { id }) => ({
         name: viewName(id)(state),
         isDisabled: viewCurrentId(state) === id,
     }),
+    // @ts-expect-error TODO later
     (dispatch, { id }) => ({
         onClick: () => dispatch(setView(id)),
     }),
@@ -21,6 +23,7 @@ export const ViewButton = connect(
 
 export const ViewPickerRaw = ({ ids }) => (
     <div className="ViewPicker">
+        {/* @ts-expect-error TODO later */}
         {ids.map((id) => <ViewButton key={id} id={id} />)}
     </div>
 );

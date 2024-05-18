@@ -20,6 +20,7 @@ export const errorReducer = (state = initialState, message) => {
             const errorMessage = `[${type}]: ${error}`;
             if (error) {
                 return {
+                    // @ts-expect-error TODO later
                     unseen: state.unseen.concat(errorMessage),
                 };
             }

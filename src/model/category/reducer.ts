@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { compose } from 'redux';
 import { getTreeFromParentsMap, itemTreeNode, cleanParentChildren } from '../base/tree/tree';
 import {

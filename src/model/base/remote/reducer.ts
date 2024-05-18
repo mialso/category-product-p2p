@@ -1,12 +1,7 @@
-import { USER_MODEL } from 'user/action';
-import { CATEGORY_MODEL } from 'category/action';
+import { CATEGORY_MODEL } from '../../category/action';
 import { START, SUCCESS, FAIL } from './api';
 
 const initialState = {
-    [USER_MODEL]: {
-        isLoading: false,
-        error: '',
-    },
     [CATEGORY_MODEL]: {
         isLoading: false,
         error: '',
