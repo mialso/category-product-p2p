@@ -23,11 +23,11 @@ export function categoryData({ dispatch, getState }, message) {
             break;
         }
         case READ_CATEGORIES_API + SUCCESS: {
-            dispatch(setCategories(message.payload.categoryMap));
+            dispatch(setCategories(message.payload.categoryMap || {}));
             break;
         }
         case READ_PRODUCTS_API + SUCCESS: {
-            dispatch(setCategoryByProduct(message.payload.categoriesByProduct));
+            dispatch(setCategoryByProduct(message.payload.categoriesByProduct || {}));
             break;
         }
         case UPDATE_CATEGORY:

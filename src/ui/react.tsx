@@ -6,6 +6,9 @@ import { Provider } from 'react-redux';
 import { App } from './component/app';
 
 export function render(store: Store) {
+    // @ts-expect-error debug
+    window.__getState = () => store.getState()
+
     // @ts-expect-error doesn't matter for now
     const root = createRoot(document.getElementById('app-root'));
     root.render(

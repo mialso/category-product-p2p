@@ -4,18 +4,39 @@ import { getTreeFromParentsMap, itemTreeNode, cleanParentChildren } from '../bas
 import {
     stateSelectable, createSelectableFromMap, itemSelectable,
     toggleParentSelect, toggleChildSelect, toggleSelect, removeSelected,
+    SelectedState,
 } from '../base/tree/selectable';
 import { CREATE_PRODUCT_API, UPDATE_PRODUCT_API, DELETE_PRODUCT_API } from '../product/action';
 import { SUCCESS } from '../base/remote/api';
-import { NOT_ASKED, ASKED, READY } from '../base/remote/constants';
+import {
+    NOT_ASKED, ASKED, READY, DataStatus,
+} from '../base/remote/constants';
 import {
     SET_CATEGORIES, READ_CATEGORIES, CREATE_CATEGORY, CREATE_CATEGORY_API,
     CATEGORY_NORMAL_MODE, UPDATE_CATEGORY, UPDATE_CATEGORY_API, TOGGLE_SELECT_CATEGORY,
     READ_CATEGORIES_BYPRODUCT_API, SET_CATEGORY_BYPRODUCT, DELETE_CATEGORY_API,
 } from './action';
-import { MODE_EDIT, MODE_CREATE, MODE_NORMAL } from './constants';
+import {
+    MODE_EDIT, MODE_CREATE, MODE_NORMAL, CategoryMode,
+} from './constants';
 
-const initialState = compose(
+export type Category = {
+    id: string,
+    name: string,
+    parentId: string,
+};
+
+export type CategoryState = {
+    ids: string[],
+    byId: Rectord<string, Category>
+    dataStatus: DataStatus,
+    error: string,
+    edit: Category | {},
+    mode: CategoryMode,
+    byProductId: Rectord<string, Category>,
+};
+
+const initialState: CategoryState & SelectedState = compose(
     stateSelectable,
 )({
     ids: [],
@@ -27,10 +48,10 @@ const initialState = compose(
     byProductId: {},
 });
 
-export const createCategoryItem = (data) => ({
-    id: data.id || '',
-    name: data.name || '',
-    parentId: data.parentId || '',
+export const createCategoryItem = (data: Partial<Category>): Category => ({
+    id: data.id ?? '',
+    name: data.name ?? '',
+    parentId: data.parentId ?? '',
 });
 
 export const createItem = compose(
@@ -51,7 +72,7 @@ export const updateItem = (item) => (state) => ({
     ...state,
     byId: { ...state.byId, [item.id]: item },
 });
-export const removeItem = (id) => function (state) {
+export const removeItem = (id) => function(state) {
     return {
         ...state,
         ids: state.ids.filter((itemId) => itemId !== id),
@@ -108,6 +129,12 @@ export const categoryReducer = (state = initialState, message) => {
             const { payload } = message;
             const ids = Object.keys(payload);
             if (!(Array.isArray(ids) && ids.length)) {
+                if (state.dataStatus === ASKED) {
+                    return {
+                        ...state,
+                        dataStatus: READY,
+                    };
+                }
                 // no data -> do nothing
                 return state;
             }

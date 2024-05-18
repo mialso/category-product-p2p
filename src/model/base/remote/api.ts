@@ -57,6 +57,11 @@ export const apiCall = (fetchService, handler) => (url = '', props = {}) => {
     if (!fetchService) {
         return Promise.reject(new Error(FETCH_SERVICE_INVALID));
     }
+    if (url.endsWith('/all')) {
+        return new Promise((resolve) => {
+            resolve([])
+        })
+    }
     return fetchService(url, props)
         .then(handler, () => Promise.reject(new Error(REQUEST_FAIL)));
 };

@@ -4,17 +4,21 @@ export const EMPTY = 'EMPTY';
 export const PARTIAL = 'PARTIAL';
 export const FULL = 'FULL';
 
+export type SelectedState = {
+    selected: string[]
+};
+
 export function itemSelectable(item) {
     return { ...item, selectMode: EMPTY };
 }
 
-export function stateSelectable(state) {
+export function stateSelectable<S>(state: S): S & SelectedState {
     return { ...state, selected: [] };
 }
 
 export function createSelectableFromMap(map) {
     return Object.values(map).reduce(
-        // @ts-expect-error TODO later
+        // @ts-expect-error
         (acc, item) => ({ ...acc, [item.id]: itemSelectable(item) }),
         {},
     );

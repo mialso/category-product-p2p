@@ -13,7 +13,7 @@ export const RequireProducts = ({ children }) => {
         }
     }, []);
     if (product.dataStatus !== READY) {
-        return null;
+        return <div>Loading products...</div>;
     }
     return (<>{children}</>);
 };

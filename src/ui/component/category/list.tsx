@@ -19,7 +19,7 @@ export const RequireCategories = ({ children }) => {
         }
     }, []);
     if (category.dataStatus !== READY) {
-        return null;
+        return <div>Loading categories...</div>;
     }
     return (<>{children}</>);
 };

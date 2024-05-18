@@ -75,7 +75,7 @@ export const productReducer = (state = initialState, message) => {
     switch (message.type) {
         case READ_PRODUCTS: return { ...state, dataStatus: ASKED };
         case SET_PRODUCTS: {
-            const { productMap } = message.payload;
+            const productMap = message.payload;
             const ids = Object.keys(productMap);
             return {
                 ...state,

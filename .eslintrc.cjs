@@ -20,5 +20,6 @@ module.exports = {
         'react/function-component-definition': ['error', {
             'namedComponents': 'arrow-function',
         }],
+        '@typescript-eslint/consistent-type-definitions': ['error', 'type']
     },
 };

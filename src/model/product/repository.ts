@@ -21,11 +21,11 @@ export function productData({ dispatch, getState }, message) {
             break;
         }
         case READ_PRODUCTS_API + SUCCESS: {
-            dispatch(setProducts(message.payload));
+            dispatch(setProducts(message.payload.productMap || {}));
             break;
         }
         case READ_CATEGORIES_API + SUCCESS: {
-            dispatch(setProductByCategory(message.payload.productByCategory));
+            dispatch(setProductByCategory(message.payload.productByCategory || {}));
             break;
         }
         case SUBMIT_PRODUCT: {

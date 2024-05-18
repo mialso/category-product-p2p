@@ -1,3 +1,6 @@
+body {
+    background-color: white;
+}
 .App {
     display: flex;
     flex-direction: column;
@@ -5,7 +8,6 @@
     justify-content: center;
     box-sizing: border-box;
     font-family: 'Roboto';
-    color: white;
 }
 
 .App-Notification {
