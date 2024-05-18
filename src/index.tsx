@@ -1,6 +1,5 @@
-import { createStore } from 'redux';
 import { render } from './ui/react';
+import { configureStore } from './store/init/index.dev';
 
-const r = (s) => s;
-const store = createStore(r, {});
+const store = configureStore({});
 render(store);
