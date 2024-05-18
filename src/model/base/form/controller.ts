@@ -1,11 +1,11 @@
 import { shallowEqual } from 'react-redux';
 import {
     CREATE_PRODUCT, UPDATE_PRODUCT, submitProduct,
-} from '../../../model/product/action';
-import { validator } from '../../../model/product/validation';
-import { createItem } from '../../../model/product/reducer';
-import { productById } from '../../../model/product/selector';
-import { openModal } from '../../../model/base/modal';
+} from '../../product/action';
+import { validator } from '../../product/validation';
+import { createItem } from '../../product/reducer';
+import { productById } from '../../product/selector';
+import { openModal } from '../modal';
 import {
     SUBMIT_FORM_PRODUCT, CHANGE_FORM_PRODUCT,
     setFormProduct, formValidationFail, toggleFormPristine,

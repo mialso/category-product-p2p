@@ -12,8 +12,8 @@ const initialState = {
 export const isAnyLoading = ({ api }) => !!api.loading.length;
 
 export const apiReducer = (state = initialState, message) => {
-    const apiStatus = message.meta && message.meta.apiStatus;
-    const model = message.meta && message.meta.model;
+    const apiStatus = message.meta?.apiStatus;
+    const model = message.meta?.model;
     switch (apiStatus) {
         case START: return {
             ...state,

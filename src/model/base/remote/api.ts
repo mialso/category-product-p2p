@@ -62,7 +62,7 @@ export const apiCall = (fetchService, handler) => (url = '', props = {}) => {
 };
 
 export const api = ({ dispatch }, message) => {
-    if (!(message.meta && message.meta.callApi)) {
+    if (!(message.meta?.callApi)) {
         return;
     }
     const {

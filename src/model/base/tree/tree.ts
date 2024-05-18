@@ -14,7 +14,7 @@ export function getTreeFromParentsMap(parentMap) {
             if (parentItem) {
                 if (!treeMap[parentItem.id]) {
                     treeMap[parentItem.id] = parentItem;
-                    treeMap[parentItem.id].children = [ id ];
+                    treeMap[parentItem.id].children = [id];
                 } else {
                     treeMap[parentItem.id].children.push(id);
                 }

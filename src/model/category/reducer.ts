@@ -51,7 +51,7 @@ export const updateItem = (item) => (state) => ({
     ...state,
     byId: { ...state.byId, [item.id]: item },
 });
-export const removeItem = (id) => function(state) {
+export const removeItem = (id) => function (state) {
     return {
         ...state,
         ids: state.ids.filter((itemId) => itemId !== id),

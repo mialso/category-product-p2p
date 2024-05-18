@@ -46,8 +46,8 @@ export const CategoryInput = (props) => {
     const {
         onSubmit, onDelete, title, onClose, ...givenCat
     } = props;
-    const [ { name, parentId }, setState ] = useState(givenCat);
-    useEffect(() => onClose, [ onClose ]);
+    const [{ name, parentId }, setState] = useState(givenCat);
+    useEffect(() => onClose, [onClose]);
     return (
         <div className="CategoryInput">
             <h4>{ title }</h4>
@@ -66,13 +66,15 @@ export const CategoryInput = (props) => {
             </div>
             <div className="CategoryInput-Action">
                 { onDelete
-                    && <button
-                        className="AppButton"
-                        type="button"
-                        onClick={onDelete}
-                    >
-                        Delete
-                    </button> }
+                    && (
+                        <button
+                            className="AppButton"
+                            type="button"
+                            onClick={onDelete}
+                        >
+                            Delete
+                        </button>
+                    ) }
                 <button
                     className="AppButton"
                     type="button"
