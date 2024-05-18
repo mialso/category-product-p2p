@@ -1,0 +1,60 @@
+.Category {
+    flex: 1;
+    width: 100%;
+    min-width: 150px;
+    display: flex;
+}
+
+.Category:hover > .Category-Action {
+    visibility: visible;
+}
+
+.CategorySelector {
+    width: 350px;
+    flex-direction: column;
+}
+
+.Category-LeftSpacer {
+    width: 20px;
+}
+
+.Category-Name {
+    flex: 1;
+    text-align: left;
+}
+
+.Category-Name > span {
+    margin-right: 4px;
+}
+
+.Category-Name:hover > span {
+    color: Dodgerblue;
+}
+
+.Category-Action {
+    visibility: hidden;
+    margin-right: 4px;
+}
+
+.Category-Action:hover {
+    color: Dodgerblue;
+}
+
+.CategoryList {
+    flex: 1;
+}
+
+.CategorySelector-Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+}
+
+.CategorySelector-Create {
+    background-color: green;
+    color: white;
+}
+.CategorySelector-Create > span {
+    margin-right: 4px;
+}

@@ -10,8 +10,15 @@ module.exports = {
         project: './tsconfig.json',
     },
     rules: {
-        indent: ['error', 4],
+        indent: 'off',
         '@typescript-eslint/indent': ['error', 4],
         'react/jsx-indent': ['error', 4],
+        'react/jsx-indent-props': ['error', 4],
+        // https://basarat.gitbooks.io/typescript/docs/tips/defaultIsBad.html
+        'import/prefer-default-export': 'off',
+        'import/no-default-export': 'error',
+        'react/function-component-definition': ['error', {
+            'namedComponents': 'arrow-function',
+        }],
     },
 };
