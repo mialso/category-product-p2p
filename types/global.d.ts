@@ -27,6 +27,7 @@ To contribute ambient declarations from any file, even non-ambient ones, use thi
 ////// -----------------------------------------------------------------------------------------------------------------
 
 declare global {
+    type Hyperswarm = import('hyperswarm');
     type PearGlobal = {
         teardown: (onTeardown: () => void) => void,
         config: {

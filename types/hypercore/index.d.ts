@@ -24,6 +24,7 @@ declare module 'hypercore' {
     }>;
     class Hypercore {
         constructor(storagePath: string, key?: StoreKey, opts?: HypercoreOptions);
+        constructor(storagePath: string, opts?: HypercoreOptions);
         readable: boolean;
 
         id: string;
